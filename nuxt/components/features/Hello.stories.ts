@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
+import { userEvent, within } from '@storybook/test'
 
 import Hello from './Hello.vue'
 
@@ -17,4 +18,19 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {},
+  play: async ({canvasElement}) => {
+    const canvas = within(canvasElement)    
+
+    const button = canvas.getByText('hello-button')
+
+    await userEvent.click(button)
+
+    const textField = canvas.getByLabelText('TextField')
+
+    await userEvent.type(textField, 'Hello World!')
+
+    await userEvent.type(textField, 'updated')
+
+    await userEvent.click(button)
+  }
 }

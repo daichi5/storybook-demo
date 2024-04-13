@@ -1,5 +1,7 @@
 <template>
   <div>
-    <input type="button" value="Click me" />
+    <button >
+      <slot></slot>
+      </button>
   </div>
 </template>

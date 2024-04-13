@@ -17,9 +17,9 @@ const { $myHelper } = useNuxtApp()
       </Text>
       <Hello />
       <Cluster>
-        <Button />
-        <Button />
-        <Button />
+        <Button>button A</Button>
+        <Button>button B</Button>
+        <Button>button C</Button>
       </Cluster>
     </Stack>
   </div>
