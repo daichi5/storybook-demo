@@ -3,6 +3,12 @@ export default defineNuxtPlugin({
   async setup (nuxtApp) {
     // this is the equivalent of a normal functional plugin
     console.log('setup called in my-plugin')
+
+    return {
+      provide: {
+        myHelper: (msg: string) => (`${msg} from my-plugin`)
+      }
+    }
   },
   hooks: {
     // You can directly register Nuxt app runtime hooks here
