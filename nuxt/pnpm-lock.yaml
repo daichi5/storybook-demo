@@ -14,6 +14,9 @@ dependencies:
   vue:
     specifier: ^3.4.21
     version: 3.4.21
+  vue-i18n:
+    specifier: '9'
+    version: 9.12.0(vue@3.4.21)
   vue-router:
     specifier: ^4.3.0
     version: 4.3.0(vue@3.4.21)
@@ -1593,6 +1596,27 @@ packages:
       mlly: 1.6.1
     transitivePeerDependencies:
       - supports-color
+
+  /@intlify/core-base@9.12.0:
+    resolution: {integrity: sha512-6EnWQXHnCh2bMiXT5N/IWwkcYQXjmF8nnEZ3YhTm23h1ZfOylz83D7pJYhcU8CsTiEdgbGiNdqyZPKwrHw03Ng==}
+    engines: {node: '>= 16'}
+    dependencies:
+      '@intlify/message-compiler': 9.12.0
+      '@intlify/shared': 9.12.0
+    dev: false
+
+  /@intlify/message-compiler@9.12.0:
+    resolution: {integrity: sha512-2c6VwhvVJ1nur+2cN2NjdrmrV6vXjvyxYVvtUYMXKsWSUwoNURHGds0xJVJmWxbF8qV9oGepcVV6xl9bvadEIg==}
+    engines: {node: '>= 16'}
+    dependencies:
+      '@intlify/shared': 9.12.0
+      source-map-js: 1.2.0
+    dev: false
+
+  /@intlify/shared@9.12.0:
+    resolution: {integrity: sha512-uBcH55x5CfZynnerWHQxrXbT6yD6j6T7Nt+R2+dHAOAneoMd6BoGvfEzfYscE94rgmjoDqdr+PdGDBLk5I5EjA==}
+    engines: {node: '>= 16'}
+    dev: false
 
   /@ioredis/commands@1.2.0:
     resolution: {integrity: sha512-Sx1pU8EM64o2BrqNpEO1CNLtKQwyhuXuqyfH7oGKCk+1a33d2r5saW8zNwm3j6BTExtjrv2BxTgzzkMwts6vGg==}
@@ -10765,6 +10789,18 @@ packages:
       vue: 3.4.21
       vue-inbrowser-compiler-independent-utils: 4.71.1(vue@3.4.21)
     dev: true
+
+  /vue-i18n@9.12.0(vue@3.4.21):
+    resolution: {integrity: sha512-rUxCKTws8NH3XP98W71GA7btAQdAuO7j6BC5y5s1bTNQYo/CIgZQf+p7d1Zo5bo/3v8TIq9aSUMDjpfgKsC3Uw==}
+    engines: {node: '>= 16'}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      '@intlify/core-base': 9.12.0
+      '@intlify/shared': 9.12.0
+      '@vue/devtools-api': 6.6.1
+      vue: 3.4.21
+    dev: false
 
   /vue-inbrowser-compiler-independent-utils@4.71.1(vue@3.4.21):
     resolution: {integrity: sha512-K3wt3iVmNGaFEOUR4JIThQRWfqokxLfnPslD41FDZB2ajXp789+wCqJyGYlIFsvEQ2P61PInw6/ph5iiqg51gg==}
