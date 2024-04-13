@@ -9,6 +9,6 @@
 .stack {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 4px;
 }
 </style>

@@ -15,6 +15,7 @@ const { $myHelper } = useNuxtApp()
       <Text>
         {{ $t('welcome') }}
       </Text>
+      <Hello />
       <Cluster>
         <Button />
         <Button />

@@ -4,6 +4,12 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/storybook',
   ],
+  components: [
+    {
+      path: '~/components',
+    pathPrefix: false,
+    }
+  ],
   storybook: {
     url: 'http://localhost:6010',
     storybookRoute: '/__storybook__',
