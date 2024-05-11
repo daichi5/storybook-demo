@@ -9,6 +9,7 @@ export const Composed: React.FC = () => {
     <Cluster>
       <Text>Composed</Text>
       <Text>description1</Text>
+      <Text>description2</Text>
     </Cluster>
     <Stack>
       <div data-testid="inner">
