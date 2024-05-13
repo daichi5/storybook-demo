@@ -5,7 +5,7 @@
   padding: 48px 20px;
   margin: 0 auto;
   max-width: 600px;
-  color: #333;
+  color: #0d0d0d;
 }
 
 .storybook-page h2 {
@@ -22,8 +22,8 @@
 }
 
 .storybook-page a {
-  text-decoration: none;
-  color: #1ea7fd;
+  text-decoration: underline;
+  color: #063c5d;
 }
 
 .storybook-page ul {
@@ -42,7 +42,7 @@
   line-height: 12px;
   font-weight: 700;
   background: #e7fdd8;
-  color: #66bf3c;
+  color: #32601d;
   padding: 4px 12px;
   margin-right: 10px;
   vertical-align: top;
@@ -65,5 +65,5 @@
 }
 
 .storybook-page .tip-wrapper svg path {
-  fill: #1ea7fd;
+  fill: #0d4b72;
 }
