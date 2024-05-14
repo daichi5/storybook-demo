@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Composed } from './index';
-import { userEvent, within } from '@storybook/test';
+import { userEvent, within, expect } from '@storybook/test';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -33,5 +33,7 @@ export const Default: Story = {
     await userEvent.type(TextField, 'Hello, World!', { delay: 100 });
 
     await userEvent.click(canvas.getByText('Button2'));
+
+    await expect(canvas.getByText('Button1')).toBeInTheDocument();
   }
 };
