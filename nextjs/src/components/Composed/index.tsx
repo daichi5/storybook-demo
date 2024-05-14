@@ -7,6 +7,9 @@ import { Button } from '@/components/Button'
 export const Composed: React.FC = () => {
   return <Stack>
     <Cluster>
+      <Text>current date is {new Date().getDate()}</Text>
+    </Cluster>
+    <Cluster>
       <Text>Composed</Text>
       <Text>description1</Text>
     </Cluster>

@@ -1,15 +1,26 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Composed } from './index';
 import { userEvent, within, expect } from '@storybook/test';
+import MockDate from 'mockdate';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Composed',
   component: Composed,
-  parameters: {},
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
   args: { },
+  async beforeEach() {
+    MockDate.set('2024-04-01');
+
+    console.log('hello')
+
+    // 👇 Reset the Date after each story
+    return () => {
+      MockDate.reset();
+    };
+  },
+
 } satisfies Meta<typeof Composed>;
 
 export default meta;
@@ -35,5 +46,6 @@ export const Default: Story = {
     await userEvent.click(canvas.getByText('Button2'));
 
     await expect(canvas.getByText('Button1')).toBeInTheDocument();
+    await expect(canvas.getByText('current date is 1')).toBeInTheDocument();
   }
 };
