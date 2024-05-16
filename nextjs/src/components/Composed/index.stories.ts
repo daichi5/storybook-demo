@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Composed } from './index';
-import { userEvent, within, expect } from '@storybook/test';
+import { userEvent, within, expect, fn, waitFor } from '@storybook/test';
 import MockDate from 'mockdate';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
@@ -28,8 +28,10 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Default: Story = {
-  args: {},
-  play: async ({ canvasElement }) => {
+  args: {
+    callback: fn(),
+  },
+  play: async ({ canvasElement, step, args }) => {
     const canvas = within(canvasElement);
 
     const inner = canvas.getByTestId('inner');
@@ -45,7 +47,10 @@ export const Default: Story = {
 
     await userEvent.click(canvas.getByText('Button2'));
 
-    await expect(canvas.getByText('Button1')).toBeInTheDocument();
+    await step('Button1 interaction step', async () => {
+      await waitFor(() => expect(args.callback).toHaveBeenCalled());
+      await expect(canvas.getByText('Button1')).toBeInTheDocument();
+    });
     await expect(canvas.getByText('current date is 1')).toBeInTheDocument();
   }
 };

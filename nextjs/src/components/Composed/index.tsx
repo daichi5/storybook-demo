@@ -4,7 +4,11 @@ import { Text } from '@/components/Text'
 import { TextField } from '@/components/TextField'
 import { Button } from '@/components/Button'
 
-export const Composed: React.FC = () => {
+type Props = {
+  callback: () => void
+}
+
+export const Composed: React.FC<Props> = ({ callback }) => {
   return <Stack>
     <Cluster>
       <Text>current date is {new Date().getDate()}</Text>
@@ -20,6 +24,6 @@ export const Composed: React.FC = () => {
       </div>
     </Stack>
 
-    <Button>Button2</Button>
+    <Button onClick={callback}>Button2</Button>
   </Stack>
 }
