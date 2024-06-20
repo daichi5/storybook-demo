@@ -6,9 +6,17 @@ import { Button } from '@/components/Button'
 
 type Props = {
   callback: () => void
+  options?: boolean
 }
 
-export const Composed: React.FC<Props> = ({ callback }) => {
+export const Composed: React.FC<Props> = ({ callback, options }) => {
+  const handleClick = () => {
+    if (options) {
+      console.log('options')
+    }
+  }
+
+
   return <Stack>
     <Cluster>
       <Text>current date is {new Date().getDate()}</Text>
@@ -23,6 +31,8 @@ export const Composed: React.FC<Props> = ({ callback }) => {
         <Button>Button1</Button>
       </div>
     </Stack>
+
+    <button onClick={handleClick}>Button3</button>
 
     <Button onClick={callback}>Button2</Button>
   </Stack>
